@@ -11,12 +11,12 @@ def face_recognition():
         # new image name
         image_name = request.form['person_name'] + '.jpg'
         new_image_path = "new_images/" + image_name
-        
+
         # check if the post request has the file part
         if 'file' in request.files:
-            # save the new image into a directory 
+            # save the new image into a directory.
             binary_image_req = request.files.get('file') 
-           
+            #if binary_image_req.status_code == 200:
             with open(new_image_path, 'wb') as f:
                 f.write(binary_image_req.read())
                                      
